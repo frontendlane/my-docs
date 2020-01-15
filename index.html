@@ -15,85 +15,86 @@
     <body>
         <header>
             <h1 class="mb-2 mt-2">My Docs</h1>
+            <p role="status">&nbsp;</p>
             <div class="inline-block mb-2">
                 <button onclick="controls.save()" class="btn btn-primary btn-sm">Save</button>
                 <button onclick="controls.print()" class="btn btn-outline-secondary btn-sm">Print</button>
             </div>
             <div class="btn-toolbar mb-2" role="toolbar" aria-label="Edit toolbar">
                 <div class="btn-group mr-2" role="group" aria-label="Actions">
-                    <button onclick="controls.undo()" class="btn btn-outline-secondary btn-sm" title="Undo">
+                    <button onclick="controls.undo(event)" class="btn btn-outline-secondary btn-sm" title="Undo - ⌘Z">
                         <i class="fas fa-undo-alt"></i>
                     </button>
-                    <button onclick="controls.redo()" class="btn btn-outline-secondary btn-sm" title="Redo">
+                    <button onclick="controls.redo(event)" class="btn btn-outline-secondary btn-sm" title="Redo - ⌘Y">
                         <i class="fas fa-redo-alt"></i>
                     </button>
-                    <button onclick="controls.clear()" class="btn btn-outline-secondary btn-sm" title="Clear text">
+                    <button onclick="controls.clear(event)" class="btn btn-outline-secondary btn-sm" title="Clear text">
                         <i class="fas fa-eraser"></i>
                     </button>
                 </div>
                 <div class="btn-group mr-2" role="group" aria-label="Clipboard">
-                    <button onclick="controls.cut()" class="btn btn-outline-secondary btn-sm" title="Cut">
+                    <button onclick="controls.cut(event)" class="btn btn-outline-secondary btn-sm" title="Cut - ⌘X">
                         <i class="fas fa-cut"></i>
                     </button>
-                    <button onclick="controls.copy()" class="btn btn-outline-secondary btn-sm" title="Copy">
+                    <button onclick="controls.copy(event)" class="btn btn-outline-secondary btn-sm" title="Copy - ⌘C">
                         <i class="far fa-copy"></i>
                     </button>
-                    <button onclick="controls.paste()" class="btn btn-outline-secondary btn-sm" title="Paste">
+                    <button onclick="controls.paste(event)" class="btn btn-outline-secondary btn-sm" title="Paste - ⌘P">
                         <i class="far fa-clipboard"></i>
                     </button>
                 </div>
                 <div class="btn-group mr-2" role="group" aria-label="Lists">
-                    <button onclick="controls.insertOrderedList()" class="btn btn-outline-secondary btn-sm" title="Insert numbered list">
+                    <button onclick="controls.insertOrderedList(event)" class="btn btn-outline-secondary btn-sm" title="Insert numbered list">
                         <i class="fas fa-list-ol"></i>
                     </button>
-                    <button onclick="controls.insertUnorderedList()" class="btn btn-outline-secondary btn-sm" title="Insert bulleted list">
+                    <button onclick="controls.insertUnorderedList(event)" class="btn btn-outline-secondary btn-sm" title="Insert bulleted list">
                         <i class="fas fa-list-ul"></i>
                     </button>
                 </div>
-                <button onclick="controls.insertLine()" class="btn btn-outline-secondary btn-sm mr-2" title="Insert line">
+                <button onclick="controls.insertLine(event)" class="btn btn-outline-secondary btn-sm mr-2" title="Insert line">
                     <i class="far fa-window-minimize"></i>
                 </button>
                 <div class="btn-group mr-2" role="group" aria-label="Image">
                     <input name="imageUrl" class="border-secondary border-width-1 border-right-0 border-radius-left" placeholder="Enter image URL" type="url">
-                    <button onclick="controls.insertImage()" class="btn btn-outline-secondary btn-sm" title="Insert Image">
+                    <button onclick="controls.insertImage(event)" class="btn btn-outline-secondary btn-sm" title="Insert Image">
                         <i class="far fa-image"></i>
                     </button>
                 </div>
                 <div class="btn-group mr-2" role="group" aria-label="Hyperlink">
                     <input name="url" class="border-secondary border-width-1 border-right-0 border-radius-left" placeholder="Enter hyperlink URL" type="url">
-                    <button onclick="controls.hyperlink()" class="btn btn-outline-secondary btn-sm" title="Hyperlink">
+                    <button onclick="controls.hyperlink(event)" class="btn btn-outline-secondary btn-sm" title="Hyperlink">
                         <i class="fas fa-link"></i>
                     </button>
-                    <button onclick="controls.unlink()" class="btn btn-outline-secondary btn-sm" title="Unlink">
+                    <button onclick="controls.unlink(event)" class="btn btn-outline-secondary btn-sm" title="Unlink">
                         <i class="fas fa-unlink"></i>
                     </button>
                 </div>
             </div>
             <div class="btn-toolbar mb-2" role="toolbar" aria-label="Formatting toolbar">
                 <div class="text-format actions btn-group mr-2" role="group" aria-label="Actions">
-                    <button onclick="controls.bold()" class="btn btn-outline-secondary btn-sm" title="Bold">
+                    <button onclick="controls.bold(event)" class="btn btn-outline-secondary btn-sm" title="Bold">
                         <i class="fas fa-bold"></i>
                     </button>
-                    <button onclick="controls.italicize()" class="btn btn-outline-secondary btn-sm" title="Italicize">
+                    <button onclick="controls.italicize(event)" class="btn btn-outline-secondary btn-sm" title="Italicize">
                         <i class="fas fa-italic"></i>
                     </button>
-                    <button onclick="controls.underline()" class="btn btn-outline-secondary btn-sm" title="Underline">
+                    <button onclick="controls.underline(event)" class="btn btn-outline-secondary btn-sm" title="Underline">
                         <i class="fas fa-underline"></i>
                     </button>
-                    <button onclick="controls.strikethrough()" class="btn btn-outline-secondary btn-sm" title="Strikethrough">
+                    <button onclick="controls.strikethrough(event)" class="btn btn-outline-secondary btn-sm" title="Strikethrough">
                         <i class="fas fa-strikethrough"></i>
                     </button>
-                    <button onclick="controls.subscript()" class="btn btn-outline-secondary btn-sm" title="Subscript">
+                    <button onclick="controls.subscript(event)" class="btn btn-outline-secondary btn-sm" title="Subscript">
                         <i class="fas fa-subscript"></i>
                     </button>
-                    <button onclick="controls.superscript()" class="btn btn-outline-secondary btn-sm" title="Superscript">
+                    <button onclick="controls.superscript(event)" class="btn btn-outline-secondary btn-sm" title="Superscript">
                         <i class="fas fa-superscript"></i>
                     </button>
                 </div>
                 <div class="inline-block ml-1 mr-2" title="Font family">
                     <i class="fas fa-font text-secondary"></i>
                     <div class="inline-block">
-                        <select class="form-control form-control-sm border-secondary" id="font-family" onchange="controls.setFontFamily()">
+                        <select class="form-control form-control-sm border-secondary" id="font-family" onchange="controls.setFontFamily(event)">
                             <option value="Times New Roman">Times New Roman</option>
                             <option value="Arial">Arial</option>
                             <option value="Courier">Courier</option>
@@ -103,7 +104,7 @@
                 <div class="inline-block ml-1 mr-2" title="Font size">
                     <i class="fas fa-text-height text-secondary"></i>
                     <div class="inline-block">
-                        <select class="form-control form-control-sm border-secondary" id="size" onchange="controls.setFontSize()">
+                        <select class="form-control form-control-sm border-secondary" id="size" onchange="controls.setFontSize(event)">
                             <option value="8">8</option>
                             <option value="10">10</option>
                             <option value="12">12</option>
@@ -122,7 +123,7 @@
                 <div class="inline-block ml-1 mr-2" title="Text color">
                     <i class="fas fa-fill-drip text-secondary"></i>
                     <div class="inline-block">
-                        <select class="form-control form-control-sm border-secondary" id="color" onchange="controls.setFontColor()">
+                        <select class="form-control form-control-sm border-secondary" id="color" onchange="controls.setFontColor(event)">
                             <option value="black">Black</option>
                             <option value="red">Red</option>
                             <option value="blue">Blue</option>
@@ -134,7 +135,7 @@
                 <div class="inline-block ml-1 mr-2" title="Highlight color">
                     <i class="fas fa-highlighter text-secondary"></i>
                     <div class="inline-block">
-                        <select class="form-control form-control-sm border-secondary" id="background-color" onchange="controls.setBackgroundColor()">
+                        <select class="form-control form-control-sm border-secondary" id="background-color" onchange="controls.setBackgroundColor(event)">
                             <option value="white">White</option>
                             <option value="red">Red</option>
                             <option value="blue">Blue</option>
@@ -146,7 +147,7 @@
                 <div class="inline-block ml-1 mr-2" title="Justify">
                     <i class="fas fa-align-left text-secondary"></i>
                     <div class="inline-block">
-                        <select class="form-control form-control-sm border-secondary" id="justify" onchange="controls.justify()">
+                        <select class="form-control form-control-sm border-secondary" id="justify" onchange="controls.justify(event)">
                             <option value="Left">Left</option>
                             <option value="Center">Center</option>
                             <option value="Right">Right</option>
@@ -154,7 +155,7 @@
                         </select>
                     </div>
                 </div>
-                <button onclick="controls.reset()" class="btn btn-outline-secondary btn-sm" title="Clear formatting">
+                <button onclick="controls.reset(event)" class="btn btn-outline-secondary btn-sm" title="Clear formatting">
                     <i class="fas fa-ban"></i>
                 </button>
             </div>
